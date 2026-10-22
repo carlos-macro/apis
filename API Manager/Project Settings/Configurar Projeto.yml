@@ -1,0 +1,30 @@
+info:
+  name: Configurar Projeto
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{URL_API_MANAGER}}/projectsetting"
+  headers:
+    - name: accept
+      value: "*/*"
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "projectId": "4918426002742418530",
+        "settingsData": []
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

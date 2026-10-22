@@ -1,0 +1,29 @@
+info:
+  name: Criar Projeto
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{URL_API_MANAGER}}/projectsetting"
+  headers:
+    - name: accept
+      value: "*/*"
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "projectId": "{{PROJECT_ID_NOVA_CONFIGURACAO}}"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

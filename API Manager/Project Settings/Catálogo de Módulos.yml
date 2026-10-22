@@ -1,0 +1,21 @@
+info:
+  name: Catálogo de Módulos
+  type: http
+  seq: 2
+
+http:
+  method: get
+  url: "{{URL_API_MANAGER}}/projectsetting/catalog"
+  headers:
+    - name: accept
+      value: "*/*"
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,26 @@
+info:
+  name: Buscar Configurações
+  type: http
+  seq: 6
+
+http:
+  method: get
+  url: "{{URL_API_MANAGER}}/projectsetting/{{PROJECT_ID}}"
+  headers:
+    - name: accept
+      value: "*/*"
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+  auth: inherit
+
+runtime:
+  variables:
+    - name: PROJECT_ID
+      value: "4918426002742418530"
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

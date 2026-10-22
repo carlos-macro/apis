@@ -1,0 +1,10 @@
+info:
+  name: Abandono
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit
+  variables:
+    - name: PROJECT_ID_ABANDONO
+      value: "4918426002284882870"

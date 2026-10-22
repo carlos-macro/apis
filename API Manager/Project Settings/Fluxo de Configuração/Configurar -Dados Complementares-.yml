@@ -1,0 +1,37 @@
+info:
+  name: Configurar "Dados Complementares"
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: "{{URL_API_MANAGER}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/complement-data"
+  headers:
+    - name: accept
+      value: "*/*"
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "enable": true,
+        "base": "ura"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: PROJECT_ID
+      value: "4918426002750938595"
+    - name: MODULE_NAME
+      value: CrossSell
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

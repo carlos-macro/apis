@@ -1,0 +1,10 @@
+info:
+  name: Fluxo de Configuração
+  type: folder
+  seq: 9
+
+request:
+  auth: inherit
+  variables:
+    - name: PROJECT_ID_NOVA_CONFIGURACAO
+      value: abc

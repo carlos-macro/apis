@@ -1,0 +1,51 @@
+info:
+  name: Lead B2C Abandono Concluído
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{URL_API_MANAGER}}/v2/data"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_DATA_ACCESS_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+          "orderId": "",
+          "orderRef": null,
+          "projectId": "{{PROJECT_ID_ABANDONO}}",
+          "projectType": "Checkout",
+          "productType": "Teste",
+          "sellType": null,
+          "status": "FluxoOnline.Lead.Concluido",
+          "automation": null,
+          "datas": [
+              {
+                  "name": "telefone",
+                  "value": "+55 (91) 99357-8395"
+              },
+              {
+                  "name": "email",
+                  "value": "teste@macro.com"
+              }
+          ]
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "if(res.getStatus() == 200){\r
+
+        \    bru.setVar(\"LEAD_B2C_TEST_ID\", res.getBody().data.orderId)\r
+
+        }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

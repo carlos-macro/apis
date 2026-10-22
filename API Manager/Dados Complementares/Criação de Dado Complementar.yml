@@ -1,0 +1,33 @@
+info:
+  name: Criação de Dado Complementar
+  type: http
+  seq: 3
+
+http:
+  method: post
+  url: "{{URL_API_MANAGER}}/complementary-data"
+  headers:
+    - name: access-token
+      value: qa4mD77BN5RBrex1TDWv
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "Base": "ura",
+        "Telefone": "71999966261",
+        "Cpf": "61314498568",
+        "Nome": "ANGELO PIO DE SOUZA NETO",
+        "Email": "pioangeloneto@yahoo.com.br",
+        "DataNascimento": "1967-11-06 00:00:00",
+        "Uf": "BA"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
