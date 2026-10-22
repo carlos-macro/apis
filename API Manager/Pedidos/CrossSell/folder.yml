@@ -5,3 +5,8 @@ info:
 
 request:
   auth: inherit
+  variables:
+    - name: CROSSSELL_PROJECT_ID
+      value: "4918426002284882870"
+    - name: CROSSSELL_LEAD_B2C_ORDER_ID
+      value: ""

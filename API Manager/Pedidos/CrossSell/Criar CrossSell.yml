@@ -1,0 +1,145 @@
+info:
+  name: Criar CrossSell
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/v2/data/crosssell"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_DATA_ACCESS_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "",
+        "orderRef": "{{CROSSSELL_LEAD_B2C_ORDER_ID}}",
+        "projectId": "{{CROSSSELL_PROJECT_ID}}",
+        "projectType": "Checkout",
+        "productType": "Teste",
+        "sellType": "Cross",
+        "status": "Teste",
+        "datas": [
+          {
+            "name": "sku",
+            "value": "4918426000070723268"
+          },
+          {
+            "name": "qtdPonto",
+            "value": "3"
+          },
+          {
+            "name": "contrato.checked",
+            "value": "true"
+          },
+          {
+            "name": "contrato.nome",
+            "value": "AceiteOfertaCrossTV"
+          },
+          {
+            "name": "utm.source",
+            "value": "google"
+          },
+          {
+            "Name": "endereco.enable",
+            "Value": "true"
+          },
+          {
+            "Name": "endereco.cep",
+            "Value": "01001-000"
+          },
+          {
+            "Name": "endereco.logradouro",
+            "Value": "Praça da Sé"
+          },
+          {
+            "Name": "endereco.numimovel",
+            "Value": "100"
+          },
+          {
+            "Name": "endereco.complemento",
+            "Value": "Apto 12"
+          },
+          {
+            "Name": "endereco.pontoreferencia",
+            "Value": "Próximo à catedral"
+          },
+          {
+            "Name": "endereco.bairro",
+            "Value": "Sé"
+          },
+          {
+            "Name": "endereco.cidade",
+            "Value": "São Paulo"
+          },
+          {
+            "Name": "endereco.estado",
+            "Value": "SP"
+          },
+          {
+            "Name": "endereco.latitude",
+            "Value": "-23.5505"
+          },
+          {
+            "Name": "endereco.longitude",
+            "Value": "-46.6333"
+          },
+          {
+            "Name": "endereco.ddd",
+            "Value": "11"
+          },
+          {
+            "name": "produtosdopedido.enable",
+            "value": "true"
+          },
+          {
+            "name": "produtosdopedido.produtos",
+            "value": "4918426001064349896,4918426001064349896"
+          },
+          {
+            "name": "produtosdopedido.quantidade",
+            "value": "1,1"
+          },
+          {
+            "name": "datainstalacao",
+            "value": "03/11/2026,04/11/2026"
+          },
+          {
+            "name": "fatura.tipofatura",
+            "value": "Débito automático"
+          },
+          {
+            "name": "fatura.email",
+            "value": "cliente.teste@exemplo.com"
+          },
+          {
+            "name": "fatura.diavencimento",
+            "value": "10"
+          },
+          {
+            "name": "fatura.titulardaconta",
+            "value": "Cliente Teste"
+          },
+          {
+            "name": "fatura.tipofatura.agencia",
+            "value": "1234"
+          },
+          {
+            "name": "fatura.tipofatura.banco",
+            "value": "001"
+          },
+          {
+            "name": "fatura.tipofatura.conta",
+            "value": "12345-6"
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

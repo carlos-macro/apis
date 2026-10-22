@@ -5,7 +5,7 @@ info:
 
 http:
   method: DELETE
-  url: "{{URL_API_MANAGER}}/projectsetting/{{PROJECT_ID}}/modules/{{MODULE_NAME}}"
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID}}/modules/{{MODULE_NAME}}"
   headers:
     - name: accept
       value: "*/*"

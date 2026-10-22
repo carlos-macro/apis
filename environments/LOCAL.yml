@@ -1,7 +1,7 @@
 name: LOCAL
 variables:
-  - name: URL_API_MANAGER
-    value: "{{process.env.URL_API_MANAGER_LOCAL}}"
+  - name: API_MANAGER_URL
+    value: "{{process.env.API_MANAGER_URL_LOCAL}}"
     description: ""
   - name: API_MANAGER_SETTINGS_ACCESS_TOKEN
     value: "{{process.env.API_MANAGER_SETTINGS_ACCESS_TOKEN}}"

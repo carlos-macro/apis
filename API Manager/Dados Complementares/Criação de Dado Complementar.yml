@@ -5,7 +5,7 @@ info:
 
 http:
   method: post
-  url: "{{URL_API_MANAGER}}/complementary-data"
+  url: "{{API_MANAGER_URL}}/complementary-data"
   headers:
     - name: access-token
       value: qa4mD77BN5RBrex1TDWv

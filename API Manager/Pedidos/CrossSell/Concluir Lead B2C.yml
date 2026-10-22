@@ -1,0 +1,32 @@
+info:
+  name: Concluir Lead B2C
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/v2/data"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_DATA_ACCESS_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "{{CROSSSELL_LEAD_B2C_ORDER_ID}}",
+        "orderRef": null,
+        "projectId": "{{CROSSSELL_PROJECT_ID}}",
+        "projectType": "Checkout",
+        "productType": "Teste",
+        "sellType": "",
+        "status": "FluxoOnline.Concluido",
+        "datas": []
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

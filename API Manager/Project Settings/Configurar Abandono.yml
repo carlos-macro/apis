@@ -5,7 +5,7 @@ info:
 
 http:
   method: PUT
-  url: "{{URL_API_MANAGER}}/projectsetting/{{PROJECT_ID}}/recovery"
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID}}/recovery"
   headers:
     - name: accept
       value: "*/*"

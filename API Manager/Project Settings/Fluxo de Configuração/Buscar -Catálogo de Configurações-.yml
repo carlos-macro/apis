@@ -5,7 +5,7 @@ info:
 
 http:
   method: get
-  url: "{{URL_API_MANAGER}}/projectsetting/catalog"
+  url: "{{API_MANAGER_URL}}/projectsetting/catalog"
   headers:
     - name: accept
       value: "*/*"

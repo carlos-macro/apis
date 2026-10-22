@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{URL_API_MANAGER}}/v2/data"
+  url: "{{API_MANAGER_URL}}/v2/data"
   headers:
     - name: access-token
       value: "{{API_MANAGER_DATA_ACCESS_TOKEN}}"

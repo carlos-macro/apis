@@ -5,7 +5,7 @@ info:
 
 http:
   method: get
-  url: "{{URL_API_MANAGER}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}"
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}"
   headers:
     - name: accept
       value: "*/*"

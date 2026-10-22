@@ -1,0 +1,110 @@
+info:
+  name: Criar Lead B2C
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/v2/data"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_DATA_ACCESS_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "",
+        "orderRef": null,
+        "projectId": "{{CROSSSELL_PROJECT_ID}}",
+        "projectType": "Checkout",
+        "productType": "Teste",
+        "sellType": null,
+        "status": "FluxoOnline.Lead",
+        "automation": null,
+        "datas": [
+          {
+            "name": "email",
+            "value": "teste@macro.com"
+          },
+          {
+            "name": "telefone",
+            "value": "21999186076"
+          },
+          {
+            "name": "cpf",
+            "value": "15271556760"
+          },
+          {
+            "name": "nome",
+            "value": "Senhor Teste da Silva"
+          },
+          {
+            "name": "empresa.cnpj",
+            "value": "38139261000160"
+          },
+          {
+            "name": "empresa.razaoSocial",
+            "value": "MACRO HOLDING \" PARTICIPACOES LTDA."
+          },
+          {
+            "name": "utm.referrer",
+            "value": "direto"
+          },
+          {
+            "name": "utm.dadosAdicionais",
+            "value": "vitrine=default&vendedor="
+          },
+          {
+            "name": "sku",
+            "value": "4918426000199660439"
+          },
+          {
+            "name": "linhaservico",
+            "value": "(38) 99896-0473"
+          }
+          //         {
+          //             "name": "layout.id",
+          //             "value": "4918426000629690091"
+          //         },
+          //         {
+          //             "name": "produtosdopedido.produtos",
+          //             "value": "4918426001064349896,4918426000322456141"
+          //         },
+          //         {
+          //             "name": "produtosdopedido.quantidade",
+          //             "value": "1,1"
+          //         },
+          //         {
+          //             "name": "produtosdopedido.periodadaoferta",
+          //             "value": "0,0"
+          //         },
+          //         {
+          //             "name": "produtosdopedido.modalidade",
+          //             "value": "Nova,Portabilidade"
+          //         },
+          //         {
+          //             "name": "produtosdopedido.telefone",
+          //             "value": "(21) 99918-6074,21"
+          //         },
+          //         {
+          //             "name": "possuiofertascombo",
+          //             "value": "true"
+          //         }
+        ]
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if(res.getStatus() == 200){
+            bru.setVar("CROSSSELL_LEAD_B2C_ORDER_ID", res.getBody().data.orderId)
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

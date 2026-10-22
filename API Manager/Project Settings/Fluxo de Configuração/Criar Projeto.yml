@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{URL_API_MANAGER}}/projectsetting"
+  url: "{{API_MANAGER_URL}}/projectsetting"
   headers:
     - name: accept
       value: "*/*"

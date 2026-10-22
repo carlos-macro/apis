@@ -1,7 +1,7 @@
 name: PROD
 variables:
-  - name: URL_API_MANAGER
-    value: "{{process.env.URL_API_MANAGER_PROD}}"
+  - name: API_MANAGER_URL
+    value: "{{process.env.API_MANAGER_URL_PROD}}"
     description: ""
   - name: API_MANAGER_SETTINGS_ACCESS_TOKEN
     value: "{{process.env.API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
