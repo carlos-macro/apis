@@ -7,4 +7,4 @@ request:
   auth: inherit
   variables:
     - name: PROJECT_ID_NOVA_CONFIGURACAO
-      value: abc
+      value: ""
