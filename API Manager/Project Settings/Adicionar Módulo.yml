@@ -1,7 +1,7 @@
 info:
   name: Adicionar Módulo
   type: http
-  seq: 4
+  seq: 5
 
 http:
   method: PUT
@@ -17,8 +17,6 @@ http:
 
 runtime:
   variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
     - name: MODULE_NAME
       value: CrossSell
 

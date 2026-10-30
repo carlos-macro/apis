@@ -1,0 +1,20 @@
+info:
+  name: Buscar Pedido
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{API_MANAGER_URL}}/getOrderById/:orderId"
+  params:
+    - name: orderId
+      value: 26655U9XGR0610
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

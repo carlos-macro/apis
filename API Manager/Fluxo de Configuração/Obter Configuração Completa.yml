@@ -1,0 +1,21 @@
+info:
+  name: Obter Configuração Completa
+  type: http
+  seq: 13
+
+http:
+  method: get
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}"
+  headers:
+    - name: accept
+      value: "*/*"
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

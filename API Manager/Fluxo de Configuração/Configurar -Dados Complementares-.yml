@@ -1,11 +1,11 @@
 info:
-  name: Configurar "CrossSell"
+  name: Configurar "Dados Complementares"
   type: http
-  seq: 8
+  seq: 10
 
 http:
   method: PUT
-  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/CrossSell"
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/complement-data"
   headers:
     - name: accept
       value: "*/*"
@@ -13,14 +13,14 @@ http:
       value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
     - name: Content-Type
       value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "enable": true,
+        "base": "ura"
+      }
   auth: inherit
-
-runtime:
-  variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
-    - name: MODULE_NAME
-      value: CrossSell
 
 settings:
   encodeUrl: true

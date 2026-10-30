@@ -1,0 +1,40 @@
+info:
+  name: Etapa de Criação - Intergrall
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/intergrall/integration"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_INTERGRALL_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "{{INTERGRALL_ORDER_ID}}",
+        "step": "Create",
+        "payload": {
+          "DadosCampanha": [
+            {
+              "origin": "dealer|oficial",
+              "vitrine": "string",
+              "modalidade": "nova|portabilidade",
+              "productId": "string",
+              "bonus": "string",
+              "oferta": "string",
+              "vendedor": "string",
+              "status": "Shinobi"
+            }
+          ]
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

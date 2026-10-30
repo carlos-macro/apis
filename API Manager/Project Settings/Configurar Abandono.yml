@@ -25,13 +25,6 @@ http:
       }
   auth: inherit
 
-runtime:
-  variables:
-    - name: PROJECT_ID
-      value: "4918426002284882870"
-    - name: MODULE_NAME
-      value: CrossSell
-
 settings:
   encodeUrl: true
   timeout: 0

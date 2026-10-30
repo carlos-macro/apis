@@ -17,7 +17,7 @@ http:
     type: json
     data: |-
       {
-        "projectId": "4918426002742418530",
+        "projectId": "project_id",
         "settingsData": []
       }
   auth: inherit

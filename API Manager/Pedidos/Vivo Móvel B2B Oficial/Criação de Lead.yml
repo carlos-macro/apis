@@ -1,0 +1,187 @@
+info:
+  name: Criação de Lead
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/v2/data"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_DATA_ACCESS_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "status": "FluxoOnline.Lead",
+        "projectId": "{{PROJECT_ID}}",
+        "productType": "Checkout Móvel",
+        "projectType": "Checkout",
+        "automation": "TAG=CNPJ Ativo",
+        "datas": [
+          {
+            "name": "vitrine",
+            "value": "default"
+          },
+          {
+            "name": "email",
+            "value": "teste@gmail.com"
+          },
+          {
+            "name": "cpf",
+            "value": "12345678910"
+          },
+          {
+            "name": "telefone",
+            "value": "38970707070"
+          },
+          {
+            "name": "idCrmParceiro",
+            "value": "ABCD"
+          },
+          {
+            "name": "produtosdopedido.id",
+            "value": "1"
+          },
+          {
+            "name": "produtosdopedido.produtos",
+            "value": "4918426002734471548"
+          },
+          {
+            "name": "produtosdopedido.quantidade",
+            "value": "1"
+          },
+          {
+            "name": "produtosdopedido.telefone",
+            "value": "98991291807"
+          },
+          {
+            "name": "produtosdopedido.modalidade",
+            "value": "Portabilidade"
+          },
+          {
+            "name": "produtosdopedido.eSim",
+            "value": "Não"
+          },
+          //     {
+          //       "name": "utm.dadosAdicionais",
+          //       "value": "modalidade=port&origin=personalizacao-b2b-fixa-fibra-oferta-92-cidades&id_origem_vivo=personalizacao-b2b-fixa-fibra-oferta-92-cidades&_gl=1*mi7b5p*_gcl_aw*R0NMLjE3OTMxMjIxNzAuQ2p3S0NBandsNEhYQmhBakVpd0FIbHBXaEpNbjM3ZlZpYW10anl2UHpUa2ZRWXMxWmV3QXdYLVgta1VJeDk5LXJnYmExaGYzN1JlQjdCb0NpOW9RQXZEX0J3RQ..*_gcl_dc*R0NMLjE3OTMxMjIxNzAuQ2p3S0NBandsNEhYQmhBakVpd0FIbHBXaEpNbjM3ZlZpYW10anl2UHpUa2ZRWXMxWmV3QXdYLVgta1VJeDk5LXJnYmExaGYzN1JlQjdCb0NpOW9RQXZEX0J3RQ..*_gcl_au*MTQyMzE1NzgxOS4xNzkwMzAyMjUw*_ga*Njc0MTA2Njg5LjE3OTAzMDIyNTg.*_ga_93GMT36CG0*czE3OTMxMjIxMDAkbzIkZzEkdDE3OTMxMjIyMTQkajE1JGwwJGgw&productId=4918426002734471548&vendedor="
+          //     },
+          {
+            "name": "empresa.cnpj",
+            "value": "16267823000118"
+          },
+          {
+            "name": "empresa.razaosocial",
+            "value": "ELEICAO 2012 FABRICIA HOLTZ SILVA VEREADOR"
+          },
+          {
+            "name": "layout.id",
+            "value": "4918426000629690091"
+          },
+          {
+            "name": "empresa.natureza",
+            "value": "Empresário (Individual)"
+          },
+          {
+            "name": "endereco.cep",
+            "value": "65124370"
+          },
+          {
+            "name": "endereco.logradouro",
+            "value": "2A RUA NONATO MATOS"
+          },
+          {
+            "name": "endereco.numImovel",
+            "value": "29"
+          },
+          {
+            "name": "endereco.bairro",
+            "value": "BOA VISTA"
+          },
+          {
+            "name": "endereco.cidade",
+            "value": "São José de Ribamar"
+          },
+          {
+            "name": "endereco.estado",
+            "value": "MA"
+          },
+          {
+            "name": "conexao.device",
+            "value": "K"
+          },
+          {
+            "name": "conexao.devicemodel",
+            "value": "K"
+          },
+          {
+            "name": "conexao.devicebrand",
+            "value": "K"
+          },
+          {
+            "name": "conexao.browsername",
+            "value": "Mobile Chrome"
+          },
+          {
+            "name": "conexao.browsermajor",
+            "value": "156"
+          },
+          {
+            "name": "conexao.browserminor",
+            "value": "0"
+          },
+          {
+            "name": "conexao.ipadress",
+            "value": "181.224.219.60"
+          },
+          {
+            "name": "conexao.macadress",
+            "value": "-"
+          },
+          {
+            "name": "conexao.operatingsystem",
+            "value": "Android"
+          },
+          {
+            "name": "conexao.operatingsystemmajor",
+            "value": "10"
+          },
+          {
+            "name": "conexao.operatingsystemminor",
+            "value": "0"
+          },
+          {
+            "name": "conexao.useragent",
+            "value": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36"
+          },
+          {
+            "name": "url.formulario",
+            "value": "oficial.vivo-empresa.com"
+          },
+          {
+            "name": "tag",
+            "value": "CNPJ Ativo"
+          }
+          //     {
+          //       "name": "correlationId",
+          //       "value": "3860a1ed-34ad-4944-8d20-b2218230891f"
+          //     }
+        ]
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if(res.getStatus() == 200){
+            bru.setVar("CREATED_ORDER_ID", res.getBody().data.orderId)
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

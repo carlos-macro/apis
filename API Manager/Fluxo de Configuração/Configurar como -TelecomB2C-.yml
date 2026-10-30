@@ -1,11 +1,11 @@
 info:
-  name: Adicionar Módulo
+  name: Configurar como "TelecomB2C"
   type: http
-  seq: 3
+  seq: 6
 
 http:
   method: PUT
-  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/{{MODULE_NAME}}"
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/Telecom"
   headers:
     - name: accept
       value: "*/*"
@@ -14,13 +14,6 @@ http:
     - name: Content-Type
       value: application/json
   auth: inherit
-
-runtime:
-  variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
-    - name: MODULE_NAME
-      value: ""
 
 settings:
   encodeUrl: true

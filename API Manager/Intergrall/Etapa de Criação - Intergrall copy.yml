@@ -1,0 +1,19 @@
+info:
+  name: Etapa de Criação - Intergrall copy
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{API_MANAGER_URL}}/intergrall/integration/order/265K8XP14QV610"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,29 @@
+info:
+  name: Adicionar Nome ao Projeto
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID}}/name"
+  headers:
+    - name: accept
+      value: "*/*"
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "projectName": "Nome de Teste Amém"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

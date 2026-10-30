@@ -1,10 +1,10 @@
 info:
   name: Fluxo de Configuração
   type: folder
-  seq: 9
+  seq: 2
 
 request:
   auth: inherit
   variables:
     - name: PROJECT_ID_NOVA_CONFIGURACAO
-      value: ""
+      value: "4918426001337478951"

@@ -1,0 +1,38 @@
+info:
+  name: Atualização de Lead (ApiManager) - Cliente
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/v2/data"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_DATA_ACCESS_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "{{INTERGRALL_ORDER_ID}}",
+        "orderRef": null,
+        "projectId": "{{PROJECT_ID}}",
+        "projectType": "Checkout",
+        "productType": "Teste",
+        "sellType": null,
+        "status": "FluxoOnline.Cliente",
+        "automation": null,
+        "datas": [
+          {
+            "name": "teste_cliente",
+            "value": "teste"
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,73 @@
+info:
+  name: Etapa de Cliente - Intergrall
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/intergrall/integration"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_INTERGRALL_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "{{INTERGRALL_ORDER_ID}}",
+        "step": "Datas",
+        "payload": {
+          "DadosCliente": [
+            {
+              "idLeadVivo": "orderId",
+              "nomeContato": "string", // Nome do sócio administrador ou razão social
+              "cpfContato": "string",
+              "cpf": "string",
+              "cnpj": "string",
+              "email": "string",
+              "razaoSocial": "string",
+              "dataFundacao": "YYYY-MM-DD"
+            }
+          ],
+          "DadosTelefones": [
+            {
+              "dddTel1": "XX", // DDD extraído do celular
+              "numTel1": "string" // Número sem DDD
+            }
+          ],
+          "CamposExtras": [
+            {
+              "extra_12": [
+                {
+                  "razaoSocial": "string",
+                  "cnpj": "string",
+                  "numeroNegociacaoVMN": "orderId",
+                  "nomeAprovador": "string",
+                  "cpfAprovador": "string",
+                  "emailAprovador": "string",
+                  "autenticacao": "idCrmParceiro",
+                  "dataHora": {
+                    "data": "DD/MM/YYYY",
+                    "hora": "HH:MM"
+                  },
+                  "ip": "",
+                  "geolocalidade": {},
+                  "navegador": "user-agent-string"
+                }
+              ] // Dados de aprovação
+            }
+          ],
+          "DadosCampanha": [
+            {
+              "status": "Shinobi"
+            }
+          ]
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

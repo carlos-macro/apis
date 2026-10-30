@@ -1,7 +1,7 @@
 info:
   name: Buscar Configurações
   type: http
-  seq: 6
+  seq: 10
 
 http:
   method: get
@@ -12,11 +12,6 @@ http:
     - name: access-token
       value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
   auth: inherit
-
-runtime:
-  variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
 
 settings:
   encodeUrl: false

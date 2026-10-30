@@ -1,0 +1,29 @@
+info:
+  name: Duplicar Pedido
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/data/duplicate"
+  body:
+    type: json
+    data: |-
+      {
+        "projectId": "{{PROJECT_ID}}",
+        "originalOrderId": "26655U9XGR0610",
+        "duplicatedOrderId": "26655U9XGR0610-x"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: PROJECT_ID
+      value: "4918426001337478951"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,44 @@
+info:
+  name: Concluir
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/v2/data"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_DATA_ACCESS_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "{{CREATED_ORDER_ID}}",
+        "status": "FluxoOnline.Concluido",
+        "projectId": "{{PROJECT_ID}}",
+        "productType": "Checkout Móvel",
+        "projectType": "Checkout",
+        "automation": "TAG=CNPJ Ativo",
+        "datas": [
+          {
+            "name": "teste_conclusao",
+            "value": "teste_conclusao"
+          }
+        ]
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if(res.getStatus() == 200){
+            bru.setVar("CREATED_ORDER_ID", res.getBody().data.orderId)
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -9,3 +9,6 @@ variables:
   - name: API_MANAGER_DATA_ACCESS_TOKEN
     value: "{{process.env.API_MANAGER_DATA_ACCESS_TOKEN}}"
     description: ""
+  - name: API_MANAGER_INTERGRALL_TOKEN
+    value: "{{process.env.API_MANAGER_INTERGRALL_TOKEN}}"
+    description: ""

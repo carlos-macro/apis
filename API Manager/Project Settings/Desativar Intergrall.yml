@@ -1,11 +1,11 @@
 info:
-  name: Configurar como "TelecomB2C"
+  name: Desativar Intergrall
   type: http
-  seq: 5
+  seq: 11
 
 http:
-  method: PUT
-  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/Telecom"
+  method: DELETE
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID}}/intergrall"
   headers:
     - name: accept
       value: "*/*"
@@ -14,13 +14,6 @@ http:
     - name: Content-Type
       value: application/json
   auth: inherit
-
-runtime:
-  variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
-    - name: MODULE_NAME
-      value: CrossSell
 
 settings:
   encodeUrl: true

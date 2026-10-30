@@ -1,0 +1,54 @@
+info:
+  name: Etapa de Endereço - Intergrall
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/intergrall/integration"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_INTERGRALL_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "{{INTERGRALL_ORDER_ID}}",
+        "step": "Address",
+        "payload": {
+          "DadosEndereco": [
+            {
+              "endMatrizLogradouro": "string",
+              "endMatrizNumero": "string",
+              "endMatrizCep": "string", // Sem formatação
+              "endMatrizCidade": "string",
+              "endMatrizBairro": "string",
+              "endMatrizUF": "string",
+              "endMatrizComplemento": "string",
+              "endMatrizPontoReferencia": "string"
+            }
+          ],
+          "DadosMovel": [
+            {
+              "dataFaturaMovel": "17", // Fixo
+              "protocoloMovel": "orderId",
+              "codPedidoMovel": "", // Vazio
+              "dataPedidoMovel": "DD/MM/YYYY",
+              "horaPedidoMovel": "HH:MM"
+            }
+          ],
+          "DadosCampanha": [
+            {
+              "status": "Shinobi"
+            }
+          ]
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

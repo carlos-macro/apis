@@ -1,0 +1,38 @@
+info:
+  name: Criação de Lead
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/v2/data"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_DATA_ACCESS_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+          "orderId": "",
+          "orderRef": null,
+          "projectId": "teste001",
+          "projectType": "Checkout",
+          "productType": "Teste",
+          "sellType": null,
+          "status": "FluxoOnline.Lead",
+          "automation": null,
+          "datas": [
+              {
+                  "name": "email",
+                  "value": "teste@teste001.com"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

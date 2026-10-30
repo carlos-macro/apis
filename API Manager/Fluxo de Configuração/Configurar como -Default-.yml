@@ -1,25 +1,22 @@
 info:
-  name: Visualizar resultado
+  name: Configurar como "Default"
   type: http
-  seq: 10
+  seq: 8
 
 http:
-  method: get
-  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}"
+  method: PUT
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/Default"
   headers:
     - name: accept
       value: "*/*"
     - name: access-token
       value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+    - name: Content-Type
+      value: application/json
   auth: inherit
 
-runtime:
-  variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
-
 settings:
-  encodeUrl: false
+  encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5

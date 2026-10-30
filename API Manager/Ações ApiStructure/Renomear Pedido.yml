@@ -1,0 +1,29 @@
+info:
+  name: Renomear Pedido
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/data/rename"
+  body:
+    type: json
+    data: |-
+      {
+        "projectId": "{{PROJECT_ID}}",
+        "originalOrderId": "26655U9XGR0610-x",
+        "renamedOrderId": "26655U9XGR0610-xx"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: PROJECT_ID
+      value: "4918426001337478951"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

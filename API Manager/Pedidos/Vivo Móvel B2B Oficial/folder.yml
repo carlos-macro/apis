@@ -1,0 +1,12 @@
+info:
+  name: Vivo Móvel B2B Oficial
+  type: folder
+  seq: 3
+
+request:
+  auth: inherit
+  variables:
+    - name: PROJECT_ID
+      value: "4918426000326286596"
+    - name: CREATED_ORDER_ID
+      value: ""

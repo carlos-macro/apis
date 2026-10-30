@@ -1,7 +1,7 @@
 info:
   name: Remover Módulo
   type: http
-  seq: 5
+  seq: 6
 
 http:
   method: DELETE
@@ -17,8 +17,6 @@ http:
 
 runtime:
   variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
     - name: MODULE_NAME
       value: CrossSell
 

@@ -1,11 +1,11 @@
 info:
-  name: Configurar como "TelecomB2B"
+  name: Configurar "Abandono"
   type: http
-  seq: 6
+  seq: 12
 
 http:
   method: PUT
-  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/TelecomB2B"
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/recovery"
   headers:
     - name: accept
       value: "*/*"
@@ -13,14 +13,17 @@ http:
       value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
     - name: Content-Type
       value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "enable": true,
+        "minutes": 1,
+        "ignoreChatbot": false,
+        "chatbotMinutes": 1,
+        "maxHours": 4
+      }
   auth: inherit
-
-runtime:
-  variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
-    - name: MODULE_NAME
-      value: CrossSell
 
 settings:
   encodeUrl: true

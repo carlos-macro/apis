@@ -1,11 +1,11 @@
 info:
-  name: Configurar "Dados Complementares"
+  name: Adicionar Nome ao Projeto
   type: http
-  seq: 9
+  seq: 3
 
 http:
   method: PUT
-  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/complement-data"
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/name"
   headers:
     - name: accept
       value: "*/*"
@@ -17,17 +17,9 @@ http:
     type: json
     data: |-
       {
-        "enable": true,
-        "base": "ura"
+        "projectName": "Nome do Projeto"
       }
   auth: inherit
-
-runtime:
-  variables:
-    - name: PROJECT_ID
-      value: "4918426002750938595"
-    - name: MODULE_NAME
-      value: CrossSell
 
 settings:
   encodeUrl: true

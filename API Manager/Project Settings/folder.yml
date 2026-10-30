@@ -1,7 +1,10 @@
 info:
   name: Project Settings
   type: folder
-  seq: 1
+  seq: 3
 
 request:
   auth: inherit
+  variables:
+    - name: PROJECT_ID
+      value: "4918426001337478951"

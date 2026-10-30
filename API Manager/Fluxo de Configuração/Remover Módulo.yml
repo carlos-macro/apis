@@ -1,11 +1,11 @@
 info:
-  name: Configurar como "Default"
+  name: Remover Módulo
   type: http
-  seq: 7
+  seq: 5
 
 http:
-  method: PUT
-  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/Default"
+  method: DELETE
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/{{MODULE_NAME}}"
   headers:
     - name: accept
       value: "*/*"
@@ -17,10 +17,8 @@ http:
 
 runtime:
   variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
     - name: MODULE_NAME
-      value: CrossSell
+      value: ""
 
 settings:
   encodeUrl: true

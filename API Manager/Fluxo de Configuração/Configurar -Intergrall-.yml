@@ -1,0 +1,37 @@
+info:
+  name: Configurar "Intergrall"
+  type: http
+  seq: 11
+
+http:
+  method: PUT
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/intergrall"
+  headers:
+    - name: accept
+      value: "*/*"
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "enable": true,
+        "baseUrl": "https://homologa.intergrall.com.br/webservices/intergrall-api/vivoportal",
+        "clientId": "YkFEgOYaypgezrF0dohjoIePWmsAWQCAPCdZIvg4JuH73ESX16zC4Ye0LH82uOqaSQDm",
+        "stepIds": {
+          "create": "Zfjmu7bKOoDt5uFjeZIrKmVBT7RFS6E8oBubkhzYKD",
+          "plans": "wdkeCHIjBTFOXVx2TmFtqUtek9hP0EKFR5UtLBMmtrap",
+          "datas": "Dd0j8OstwAJd0XVM4vt3EhqCmJ17iCpWPzeWnGpTf97p",
+          "address": "Hetr6jBN9rfFQqMIDcW8oOFQcPAeunbeRDj0d7hFmXu"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

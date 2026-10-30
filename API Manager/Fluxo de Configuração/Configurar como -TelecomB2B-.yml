@@ -1,11 +1,11 @@
 info:
-  name: Remover Módulo
+  name: Configurar como "TelecomB2B"
   type: http
-  seq: 4
+  seq: 7
 
 http:
-  method: DELETE
-  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/{{MODULE_NAME}}"
+  method: PUT
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID_NOVA_CONFIGURACAO}}/modules/TelecomB2B"
   headers:
     - name: accept
       value: "*/*"
@@ -14,13 +14,6 @@ http:
     - name: Content-Type
       value: application/json
   auth: inherit
-
-runtime:
-  variables:
-    - name: PROJECT_ID
-      value: "4918426002742418530"
-    - name: MODULE_NAME
-      value: ""
 
 settings:
   encodeUrl: true

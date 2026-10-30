@@ -1,0 +1,90 @@
+info:
+  name: Etapa de Planos - Intergrall
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/intergrall/integration"
+  headers:
+    - name: access-token
+      value: "{{API_MANAGER_INTERGRALL_TOKEN}}"
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "{{INTERGRALL_ORDER_ID}}",
+        "step": "Plans",
+        "payload": {
+          "DadosMovelTerm": [
+            {
+              "DadosMovelList": [
+                {
+                  "descPlanoMovel": "string", // Descrição do plano
+                  "dddChip": "(XX)", // DDD formatado
+                  "telPortabilidade": "string", // Telefone completo para portabilidade
+                  "itensAdicionaisMovel": "1", // Fixo
+                  "quantidadeLinhasMovel": "1", // Fixo
+                  "dddPortabilidade": "XX", // DDD sem parênteses
+                  "doadoraPortabilidade": " - " // Fixo
+                }
+              ]
+            }
+          ],
+          "CamposExtras": [
+            {
+              "extra_1": "",
+              "extra_2": "",
+              // ... outros campos vazios
+              "extra_15": [
+                {
+                  "id": 123,
+                  "plano": {
+                    "ofeta": "string",
+                    "service_name": "string",
+                    "service_desc": "string",
+                    "valor_vivoCorp": 99.90,
+                    "valor_oferta": 99.90
+                  },
+                  "chip": {
+                    "service_name": "YGSC246U1000_SIM CARD 4G P71 HRS 2/3/4FF",
+                    "valor_chip": 10.00
+                  },
+                  "svasVivoCorp": [
+                    { // Opcional
+                      "sva2": [
+                        {
+                          "service_name": "string",
+                          "service_desc": "string",
+                          "valor_oferta": "string"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "totais": {
+                    "planos_servicos": 99.90,
+                    "aparelhos_acessorios": 10.00,
+                    "total_fatura": 109.90,
+                    "total_mensal": 99.90
+                  }
+                }
+              ]
+            }
+          ],
+          "DadosCampanha": [
+            {
+              "status": "Shinobi"
+            }
+          ]
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
