@@ -1,0 +1,22 @@
+info:
+  name: Reprocessar Hooks Síncronos
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/hook/reprocess/vivo-seguro-ape"
+  headers:
+    - name: access-token
+      value: P2Z1ckG8PEzs
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

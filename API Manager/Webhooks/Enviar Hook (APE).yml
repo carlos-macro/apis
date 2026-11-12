@@ -1,0 +1,39 @@
+info:
+  name: Enviar Hook (APE)
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/hook?api=ape&key=xIO9R38Pqh18w31F5A6T5RSoxRQquc"
+  params:
+    - name: api
+      value: ape
+      type: query
+    - name: key
+      value: xIO9R38Pqh18w31F5A6T5RSoxRQquc
+      type: query
+    - name: lazy
+      value: "true"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "Project": "VIVO_MOVEL_B2B_RPA_CASO_IMPUTE",
+        "Module": "Deals",
+        "CrmId": "4918426002494772194",
+        "Status": "Failure",
+        "Message": "Protocolo inv\u00e1lido",
+        "type": "rpaMacro",
+        "Data": {}
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,35 @@
+info:
+  name: Enviar Hook VivoSeguro (APE)
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/hook?api=vivo-seguro-ape&key=xIO9R38Pqh18w31F5A6T5RSoxRQquc"
+  params:
+    - name: api
+      value: vivo-seguro-ape
+      type: query
+    - name: key
+      value: xIO9R38Pqh18w31F5A6T5RSoxRQquc
+      type: query
+    - name: lazy
+      value: "true"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "policyId": "teste-x",
+        "status": "Failure",
+        "message": "CANCELED_outros"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

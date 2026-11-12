@@ -1,0 +1,30 @@
+info:
+  name: Registrar Evento
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/event"
+  body:
+    type: json
+    data: |-
+      {
+        "correlationId": "",
+        "projectId": "abc",
+        "name": "firt-session",
+        "origin": "http://sitedotrem.com.br",
+        "datas": {
+          "ip": "8.149.203.144",
+          "outrasCoisas": "uaaaaau",
+          "letraPreferida": "x"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,21 @@
+info:
+  name: Buscar Histórico
+  type: http
+  seq: 9
+
+http:
+  method: get
+  url: "{{API_MANAGER_URL}}/history/Zoho/4918426002756860347/pedido_history/modifications"
+  headers:
+    - name: accept
+      value: text/plain
+    - name: access-token
+      value: gYB6wR0667Xq
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

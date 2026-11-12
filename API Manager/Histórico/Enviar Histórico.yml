@@ -1,0 +1,48 @@
+info:
+  name: Enviar Histórico
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/history"
+  params:
+    - name: lazy
+      value: "true"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "source": "Zoho",
+        "referenceId": "4918426002509330151ss",
+        "eventName": "campo_modificado",
+        "token": "gYB6wR0667Xq",
+        "payload": {
+          "modificadoPor": "Carlos",
+          "modificadoPorId": "4918426000782619001",
+          "idExterno": "26QRNXBRI7IA06s",
+          "projeto": "Vivo M\u00F3vel B2B Oficial",
+          "projetoId": "4918426000326286596",
+          "estagio": "Oportunidade perdidas",
+          "ocorrencia": "Aguardando Tokens",
+          "fonteDeLeads": "",
+          "proprietarioOportunidade": "Dispon\u00EDvels",
+          "proprietarioOportunidadeId": "4918426000001382001",
+          "vendedor": "",
+          "vendedorId": "",
+          "horaModificacao": "2026-06-05 12:55:15 PM",
+          "horaCriacao": "2026-06-02 01:29:31 PM"
+        },
+        "project": "Vivo M\u00F3vel B2B Oficial",
+        "author": "4918426000782619001"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
