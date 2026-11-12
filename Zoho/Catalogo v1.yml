@@ -1,0 +1,30 @@
+info:
+  name: Catalogo v1
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: https://www.zohoapis.com/crm/v7/functions/catalogov1/actions/execute?auth_type=apikey&zapikey=1003.f37ba7f2bf0907103d114d26caf82498.bbdaf41db68e8d05fc443172c4c13de3
+  params:
+    - name: auth_type
+      value: apikey
+      type: query
+    - name: zapikey
+      value: 1003.f37ba7f2bf0907103d114d26caf82498.bbdaf41db68e8d05fc443172c4c13de3
+      type: query
+  body:
+    type: multipart-form
+    data:
+      - name: arguments
+        type: text
+        value: '{"data":{"fields":{"Tipo_Plano":"Controle","Vendor_Name": "VIVO", "Projetos": "Vivo B2B Renovação"},"project":"checkout"}}'
+        contentType: Text
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
