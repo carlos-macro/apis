@@ -13,7 +13,7 @@ http:
     type: json
     data: |-
       {
-        "orderId": "{{INTERGRALL_ORDER_ID}}",
+        "projectId": "{{PROJECT_ID}}",
         "step": "Create",
         "payload": {
           "DadosCampanha": [
@@ -31,6 +31,14 @@ http:
         }
       }
   auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if(res.getStatus() == 200){
+            bru.setVar("INTERGRALL_SEQUENCE_ID", res.getBody().data.sequenceId)
+        }
 
 settings:
   encodeUrl: true

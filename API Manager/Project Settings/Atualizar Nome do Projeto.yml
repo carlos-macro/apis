@@ -1,11 +1,11 @@
 info:
-  name: Configurar Dados Complementares
+  name: Atualizar Nome do Projeto
   type: http
-  seq: 8
+  seq: 4
 
 http:
   method: PUT
-  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID}}/complement-data"
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID}}/name"
   headers:
     - name: accept
       value: "*/*"
@@ -17,8 +17,7 @@ http:
     type: json
     data: |-
       {
-        "enable": true,
-        "base": "ura"
+        "projectName": "Nome de Teste Amém"
       }
   auth: inherit
 

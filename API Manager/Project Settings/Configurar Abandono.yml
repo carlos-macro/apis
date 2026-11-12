@@ -18,9 +18,9 @@ http:
     data: |-
       {
         "enable": true,
-        "minutes": 1,
+        "minutes": 2,
         "ignoreChatbot": false,
-        "chatbotMinutes": 1,
+        "chatbotMinutes": 2,
         "maxHours": 4
       }
   auth: inherit

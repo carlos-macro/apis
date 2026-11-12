@@ -14,6 +14,8 @@ http:
     data: |-
       {
         "orderId": "{{INTERGRALL_ORDER_ID}}",
+        "sequenceId": "{{INTERGRALL_SEQUENCE_ID}}",
+        "projectId": "{{PROJECT_ID}}",
         "step": "Address",
         "payload": {
           "DadosEndereco": [

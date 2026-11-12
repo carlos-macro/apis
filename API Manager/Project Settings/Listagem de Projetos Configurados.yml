@@ -5,7 +5,7 @@ info:
 
 http:
   method: get
-  url: "{{API_MANAGER_URL}}/projectsetting?page=1&pageSize=50&recoveryEnabled=true"
+  url: "{{API_MANAGER_URL}}/projectsetting?page=1&pageSize=100"
   headers:
     - name: accept
       value: "*/*"
@@ -16,11 +16,12 @@ http:
       value: "1"
       type: query
     - name: pageSize
-      value: "50"
+      value: "100"
       type: query
     - name: recoveryEnabled
       value: "true"
       type: query
+      disabled: true
   auth: inherit
 
 settings:

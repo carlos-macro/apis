@@ -1,7 +1,7 @@
 info:
   name: Fluxo Intergrall
   type: folder
-  seq: 7
+  seq: 6
 
 request:
   auth: inherit
@@ -10,3 +10,5 @@ request:
       value: 262QUK5FG6OK10
     - name: PROJECT_ID
       value: "4918426001337478951"
+    - name: INTERGRALL_SEQUENCE_ID
+      value: ""

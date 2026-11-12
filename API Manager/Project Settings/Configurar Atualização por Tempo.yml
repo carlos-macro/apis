@@ -1,0 +1,36 @@
+info:
+  name: Configurar Atualização por Tempo
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{API_MANAGER_URL}}/projectsetting/{{PROJECT_ID}}/update-by-time"
+  headers:
+    - name: accept
+      value: "*/*"
+    - name: access-token
+      value: "{{API_MANAGER_SETTINGS_ACCESS_TOKEN}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "enable": true,
+        "statusMappings": [
+          {
+            "from": "FluxoOnline.WaitingToDone",
+            "to": "FluxoOnline.Concluido",
+            "minutes": 1
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

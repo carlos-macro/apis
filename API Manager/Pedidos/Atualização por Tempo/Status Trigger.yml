@@ -1,7 +1,7 @@
 info:
-  name: Lead B2C Abandono (Default)
+  name: Status Trigger
   type: http
-  seq: 1
+  seq: 2
 
 http:
   method: POST
@@ -13,18 +13,18 @@ http:
     type: json
     data: |-
       {
-          "orderId": "",
+          "orderId": "{{CREATED_ORDER_ID}}",
           "orderRef": null,
-          "projectId": "{{PROJECT_ID_ABANDONO}}",
+          "projectId": "4918426001337478951",
           "projectType": "Checkout",
           "productType": "Teste",
           "sellType": null,
-          "status": "FluxoOnline.Lead",
+          "status": "FluxoOnline.WaitingToDone",
           "automation": null,
           "datas": [
               {
-                  "name": "email",
-                  "value": "teste@macro.com"
+                  "name": "telefone",
+                  "value": "3898887777"
               }
           ]
       }

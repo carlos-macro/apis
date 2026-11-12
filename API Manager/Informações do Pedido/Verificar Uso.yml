@@ -1,0 +1,45 @@
+info:
+  name: Verificar Uso
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{API_MANAGER_URL}}/order/info/was-used?includeOrders=true"
+  params:
+    - name: includeOrders
+      value: "true"
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+        "projectId": "1234567",
+        "items": {
+          "IP": "1385174978232",
+          "cpf": "13851749782",
+          "telefone": "12132",
+          "email": "ca@ca.com"
+        },
+        "hourRange": 720
+      }
+
+      // Erro por causa do JSON:
+      // {\"projectId\":\"4918426002278650606\",\"items\":{\"cpf\":\"03966337495\"},\"hourRange\":720}
+
+      // Exemplo acima, corrigido.
+      // {
+      //   "projectId": "4918426002278650606",
+      //   "items": {
+      //     "cpf": "03966337495"
+      //   },
+      //   "hourRange": 720
+      // }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

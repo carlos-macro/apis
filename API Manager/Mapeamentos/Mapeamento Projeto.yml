@@ -1,0 +1,16 @@
+info:
+  name: Mapeamento Projeto
+  type: http
+  seq: 1
+
+http:
+  method: get
+  url: "{{API_MANAGER_URL}}/mapping/projects/4918426000013498007"
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
